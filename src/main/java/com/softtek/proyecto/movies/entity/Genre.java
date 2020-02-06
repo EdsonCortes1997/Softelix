@@ -1,8 +1,19 @@
 package com.softtek.proyecto.movies.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Genre")
 public class Genre {
 	
+	@Id
+	@Column(name = "GenreID")
 	private Integer genreId;
+	
+	@Column(name = "Genre_name")
 	private String genreName;
 	
 	

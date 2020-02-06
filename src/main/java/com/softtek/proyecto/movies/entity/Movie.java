@@ -1,4 +1,5 @@
 package com.softtek.proyecto.movies.entity;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -9,12 +10,20 @@ import javax.persistence.Table;
 public class Movie {
 	
 	@Id
-	private Integer movieId;
+	@Column(name = "MovieID")
+	Integer movieId;
+	
+	@Column(name = "Title")
 	private String title;
+	
+	@Column(name = "Year")
 	private java.util.Date year ;
-	private Integer countryId;
-	private Integer directorId;
-	private Integer clasificationId;
+	
+	@Column(name = "CountryID")
+	private Country countryId;
+	
+	@Column(name = "Title")
+	private Classification classificationId;
 	
 	
 	public Integer getMovieId() {
@@ -35,29 +44,20 @@ public class Movie {
 	public void setYear(java.util.Date year) {
 		this.year = year;
 	}
-	public Integer getCountryId() {
+	public Country getCountryId() {
 		return countryId;
 	}
-	public void setCountryId(Integer countryId) {
+	public void setCountryId(Country countryId) {
 		this.countryId = countryId;
 	}
-	public Integer getDirectorId() {
-		return directorId;
+	public Classification getClassificationId() {
+		return classificationId;
 	}
-	public void setDirectorId(Integer directorId) {
-		this.directorId = directorId;
+	public void setClassificationId(Classification classificationId) {
+		this.classificationId = classificationId;
 	}
-	public Integer getClasificationId() {
-		return clasificationId;
-	}
-	public void setClasificationId(Integer clasificationId) {
-		this.clasificationId = clasificationId;
-	}
-	@Override
-	public String toString() {
-		return "Movie [movieId=" + movieId + ", title=" + title + ", year=" + year + ", countryId=" + countryId
-				+ ", directorId=" + directorId + ", clasificationId=" + clasificationId + "]";
-	}
+	
+	
 	
 	
 	
