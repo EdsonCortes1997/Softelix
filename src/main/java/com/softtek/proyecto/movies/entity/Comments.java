@@ -2,7 +2,10 @@ package com.softtek.proyecto.movies.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -10,26 +13,28 @@ import javax.persistence.Table;
 public class Comments {
 	
 	@Id
-	@Column(name = "CommentID")
-	private Integer commentId;
+	@Column(name = "commentId")
+	private Long commentId;
 	
-	@Column(name = "Comment")
+	@Column(name = "comment")
 	private String comment;
 	
-	@Column(name = "MovieID")
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="movieId")
 	private Movie movieId;
 	
-	@Column(name = "UserID")
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name = "userId")
 	private User userId;
 	
-	@Column(name = "User")
+	@Column(name = "user")
 	private String user;
 	
 	
-	public Integer getCommentId() {
+	public Long getCommentId() {
 		return commentId;
 	}
-	public void setCommentId(Integer commentId) {
+	public void setCommentId(Long commentId) {
 		this.commentId = commentId;
 	}
 	public String getComment() {

@@ -10,17 +10,17 @@ import javax.persistence.Table;
 public class Country {
 	
 	@Id
-	@Column(name = "CountryID")
-	private Integer countryId;
+	@Column(name = "countryId")
+	private Long countryId;
 	
-	@Column(name = "Country_name")
+	@Column(name = "countryName")
 	private String countryName;
 
-	public Integer getCountryId() {
+	public Long getCountryId() {
 		return countryId;
 	}
 
-	public void setCountryId(Integer countryId) {
+	public void setCountryId(Long countryId) {
 		this.countryId = countryId;
 	}
 

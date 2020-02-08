@@ -1,35 +1,42 @@
 package com.softtek.proyecto.movies.entity;
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
 @Entity
-@Table(name="Movie")
+@Table(name="likes")
 public class Movie {
 	
 	@Id
-	@Column(name = "MovieID")
-	Integer movieId;
+	@Column(name = "movieId")
+	Long movieId;
 	
-	@Column(name = "Title")
+	@Column(name = "title")
 	private String title;
 	
-	@Column(name = "Year")
-	private java.util.Date year ;
+	@Column(name = "year")
+	private Date year ;
 	
-	@Column(name = "CountryID")
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name = "countryId")
 	private Country countryId;
 	
-	@Column(name = "Title")
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name = "classificationId")
 	private Classification classificationId;
 	
 	
-	public Integer getMovieId() {
+	public Long getMovieId() {
 		return movieId;
 	}
-	public void setMovieId(Integer movieId) {
+	public void setMovieId(Long movieId) {
 		this.movieId = movieId;
 	}
 	public String getTitle() {
@@ -38,10 +45,10 @@ public class Movie {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public java.util.Date getYear() {
+	public Date getYear() {
 		return year;
 	}
-	public void setYear(java.util.Date year) {
+	public void setYear(Date year) {
 		this.year = year;
 	}
 	public Country getCountryId() {

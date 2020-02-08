@@ -10,16 +10,16 @@ import javax.persistence.Table;
 public class Director {
 	
 	@Id
-	@Column(name = "DirectorID")
-	private Integer directorId;
+	@Column(name = "directorId")
+	private Long directorId;
 	
-	@Column(name = "Name")
+	@Column(name = "directorName")
 	private String directorName;
 	
-	public Integer getDirectorId() {
+	public Long getDirectorId() {
 		return directorId;
 	}
-	public void setDirectorId(Integer directorId) {
+	public void setDirectorId(Long directorId) {
 		this.directorId = directorId;
 	}
 	public String getDirectorName() {

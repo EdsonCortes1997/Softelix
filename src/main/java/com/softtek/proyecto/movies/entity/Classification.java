@@ -10,16 +10,16 @@ import javax.persistence.Table;
 public class Classification {
 	
 	@Id
-	@Column(name = "ClassificationID")
-	private Integer classificationId;
+	@Column(name = "classificationId")
+	private Long classificationId;
 	
-	@Column(name = "Classification")
+	@Column(name = "classificationName")
 	private String classificationName;
 	
-	public Integer getClassificationId() {
+	public Long getClassificationId() {
 		return classificationId;
 	}
-	public void setClassificationId(Integer classificationId) {
+	public void setClassificationId(Long classificationId) {
 		this.classificationId = classificationId;
 	}
 	public String getClassificationName() {

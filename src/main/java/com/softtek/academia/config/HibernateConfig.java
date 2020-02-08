@@ -1,4 +1,4 @@
-package com.softtek.proyecto.movies.config;
+package com.softtek.academia.config;
 
 import java.util.Properties;
 

@@ -1,4 +1,4 @@
-package com.softtek.proyecto.movies.config;
+package com.softtek.academia.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

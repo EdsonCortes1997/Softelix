@@ -8,17 +8,17 @@ import javax.persistence.Id;
 public class UserRatings {
 
 	@Id
-	@Column(name = "MovieID")
-	private Integer movieId;
+	@Column(name = "movieId")
+	private Long movieId;
 
-	@Column(name = "Rating")
+	@Column(name = "rating")
 	private double rating;
 
-	public Integer getMovieId() {
+	public Long getMovieId() {
 		return movieId;
 	}
 
-	public void setMovieId(Integer movieId) {
+	public void setMovieId(Long movieId) {
 		this.movieId = movieId;
 	}
 

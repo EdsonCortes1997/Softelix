@@ -10,17 +10,17 @@ import javax.persistence.Table;
 public class Genre {
 	
 	@Id
-	@Column(name = "GenreID")
-	private Integer genreId;
+	@Column(name = "genreId")
+	private Long genreId;
 	
-	@Column(name = "Genre_name")
+	@Column(name = "genreName")
 	private String genreName;
 	
 	
-	public Integer getGenreId() {
+	public Long getGenreId() {
 		return genreId;
 	}
-	public void setGenreId(Integer genreId) {
+	public void setGenreId(Long genreId) {
 		this.genreId = genreId;
 	}
 	public String getGenreName() {

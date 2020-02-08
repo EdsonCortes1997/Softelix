@@ -6,26 +6,26 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="User")
+@Table(name="Users")
 public class User {
 	
 	@Id
-	@Column(name = "UserID")
-	private Integer userId;
+	@Column(name = "userId")
+	private Long userId;
 	
-	@Column(name = "Username")
+	@Column(name = "username")
 	private String username;
 	
-	@Column(name = "Password")
+	@Column(name = "password")
 	private String password;
 	
 	
 	
 	
-	public Integer getUserId() {
+	public Long getUserId() {
 		return userId;
 	}
-	public void setUserId(Integer userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
 	public String getUsername() {
