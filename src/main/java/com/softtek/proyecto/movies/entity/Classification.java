@@ -1,38 +1,37 @@
 package com.softtek.proyecto.movies.entity;
 
-import javax.persistence.Column;
+import java.io.Serializable;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Classification")
-public class Classification {
+@Table(name="classification")
+public class Classification implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
 	@Id
-	@Column(name = "classificationId")
-	private Long classificationId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer classification_Id;
 	
-	@Column(name = "classificationName")
-	private String classificationName;
+	private String classification_Name;
 	
-	public Long getClassificationId() {
-		return classificationId;
+	public Integer getClassificationId() {
+		return classification_Id;
 	}
-	public void setClassificationId(Long classificationId) {
-		this.classificationId = classificationId;
+	public void setClassificationId(Integer classification_Id) {
+		this.classification_Id = classification_Id;
 	}
 	public String getClassificationName() {
-		return classificationName;
+		return classification_Name;
 	}
-	public void setClassificationName(String classificationName) {
-		this.classificationName = classificationName;
+	public void setClassificationName(String classification_Name) {
+		this.classification_Name = classification_Name;
 	}
-	@Override
-	public String toString() {
-		return "Classification [classificationId=" + classificationId + ", classificationName=" + classificationName
-				+ "]";
-	}
+	
 	
 	
 

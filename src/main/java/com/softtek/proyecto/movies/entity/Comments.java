@@ -1,6 +1,7 @@
 package com.softtek.proyecto.movies.entity;
 
-import javax.persistence.Column;
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -9,33 +10,31 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Comments")
-public class Comments {
+@Table(name="comments")
+public class Comments implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
 	@Id
-	@Column(name = "commentId")
-	private Long commentId;
+	private Integer comment_Id;
 	
-	@Column(name = "comment")
 	private String comment;
 	
 	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name="movieId")
-	private Movie movieId;
+	@JoinColumn(name="movie_Id")
+	private Movie movie_Id;
 	
 	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name = "userId")
-	private User userId;
+	@JoinColumn(name = "user_Id")
+	private User user_Id;
 	
-	@Column(name = "user")
 	private String user;
 	
 	
-	public Long getCommentId() {
-		return commentId;
+	public Integer getCommentId() {
+		return comment_Id;
 	}
-	public void setCommentId(Long commentId) {
-		this.commentId = commentId;
+	public void setCommentId(Integer comment_Id) {
+		this.comment_Id = comment_Id;
 	}
 	public String getComment() {
 		return comment;
@@ -44,16 +43,16 @@ public class Comments {
 		this.comment = comment;
 	}
 	public Movie getMovieId() {
-		return movieId;
+		return movie_Id;
 	}
-	public void setMovieId(Movie movieId) {
-		this.movieId = movieId;
+	public void setMovieId(Movie movie_Id) {
+		this.movie_Id = movie_Id;
 	}
 	public User getUserId() {
-		return userId;
+		return user_Id;
 	}
-	public void setUserId(User userId) {
-		this.userId = userId;
+	public void setUserId(User user_Id) {
+		this.user_Id = user_Id;
 	}
 	public String getUser() {
 		return user;
@@ -61,10 +60,6 @@ public class Comments {
 	public void setUser(String user) {
 		this.user = user;
 	}
-	@Override
-	public String toString() {
-		return "Comments [commentId=" + commentId + ", comment=" + comment + ", movieId=" + movieId + ", userId="
-				+ userId + ", user=" + user + "]";
-	}
+	
 
 }

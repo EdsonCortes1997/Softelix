@@ -1,9 +1,12 @@
 package com.softtek.proyecto.movies.entity;
+import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -11,12 +14,15 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="likes")
-public class Movie {
+@Table(name="movie")
+public class Movie implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@Column(name = "movieId")
-	Long movieId;
+	@Column(name = "movie_Id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer movie_Id;
 	
 	@Column(name = "title")
 	private String title;
@@ -25,19 +31,19 @@ public class Movie {
 	private Date year ;
 	
 	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name = "countryId")
-	private Country countryId;
+	@JoinColumn(name = "country_Id" )
+	private Country country_Id;
 	
-	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name = "classificationId")
-	private Classification classificationId;
+	@ManyToOne(fetch=FetchType.EAGER )
+	@JoinColumn(name = "classification_Id")
+	private Classification classification_Id;
 	
 	
-	public Long getMovieId() {
-		return movieId;
+	public Integer getMovieId() {
+		return movie_Id;
 	}
-	public void setMovieId(Long movieId) {
-		this.movieId = movieId;
+	public void setMovieId(Integer movie_Id) {
+		this.movie_Id = movie_Id;
 	}
 	public String getTitle() {
 		return title;
@@ -52,16 +58,16 @@ public class Movie {
 		this.year = year;
 	}
 	public Country getCountryId() {
-		return countryId;
+		return country_Id;
 	}
-	public void setCountryId(Country countryId) {
-		this.countryId = countryId;
+	public void setCountryId(Country country_Id) {
+		this.country_Id = country_Id;
 	}
 	public Classification getClassificationId() {
-		return classificationId;
+		return classification_Id;
 	}
-	public void setClassificationId(Classification classificationId) {
-		this.classificationId = classificationId;
+	public void setClassificationId(Classification classification_Id) {
+		this.classification_Id = classification_Id;
 	}
 	
 	

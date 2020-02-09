@@ -1,37 +1,36 @@
 package com.softtek.proyecto.movies.entity;
 
-import javax.persistence.Column;
+import java.io.Serializable;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Genre")
-public class Genre {
+@Table(name="genre")
+public class Genre implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
 	@Id
-	@Column(name = "genreId")
-	private Long genreId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer genre_Id;
 	
-	@Column(name = "genreName")
-	private String genreName;
+	private String genre_Name;
 	
 	
-	public Long getGenreId() {
-		return genreId;
+	public Integer getGenreId() {
+		return genre_Id;
 	}
-	public void setGenreId(Long genreId) {
-		this.genreId = genreId;
+	public void setGenreId(Integer genre_Id) {
+		this.genre_Id = genre_Id;
 	}
 	public String getGenreName() {
-		return genreName;
+		return genre_Name;
 	}
-	public void setGenreName(String genreName) {
-		this.genreName = genreName;
-	}
-	@Override
-	public String toString() {
-		return "Genre [genreId=" + genreId + ", genreName=" + genreName + "]";
+	public void setGenreName(String genre_Name) {
+		this.genre_Name = genre_Name;
 	}
 	
 	

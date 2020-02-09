@@ -1,25 +1,29 @@
 package com.softtek.proyecto.movies.entity;
 
-import javax.persistence.Column;
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.Table;
 
 @Entity
-public class UserRatings {
-
+@Table(name="user_ratings")
+public class UserRatings implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	@Id
-	@Column(name = "movieId")
-	private Long movieId;
+	@JoinColumn(name = "movie_Id")
+	private Integer movie_Id;
 
-	@Column(name = "rating")
 	private double rating;
 
-	public Long getMovieId() {
-		return movieId;
+	public Integer getMovieId() {
+		return movie_Id;
 	}
 
-	public void setMovieId(Long movieId) {
-		this.movieId = movieId;
+	public void setMovieId(Integer movie_Id) {
+		this.movie_Id = movie_Id;
 	}
 
 	public double getRating() {
@@ -30,9 +34,5 @@ public class UserRatings {
 		this.rating = rating;
 	}
 
-	@Override
-	public String toString() {
-		return "UserRatings [movieId=" + movieId + ", rating=" + rating + "]";
-	}
 
 }

@@ -1,32 +1,34 @@
 package com.softtek.proyecto.movies.entity;
 
-import javax.persistence.Column;
+import java.io.Serializable;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Users")
-public class User {
+@Table(name="users")
+public class User implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
 	@Id
-	@Column(name = "userId")
-	private Long userId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer user_Id;
 	
-	@Column(name = "username")
 	private String username;
 	
-	@Column(name = "password")
 	private String password;
 	
 	
 	
 	
-	public Long getUserId() {
-		return userId;
+	public Integer getUserId() {
+		return user_Id;
 	}
-	public void setUserId(Long userId) {
-		this.userId = userId;
+	public void setUserId(Integer user_Id) {
+		this.user_Id = user_Id;
 	}
 	public String getUsername() {
 		return username;
@@ -40,11 +42,7 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	@Override
-	public String toString() {
-		return "User [userId=" + userId + ", username=" + username + ", password=" + password + "]";
-	}
-	
+
 	
 	
 

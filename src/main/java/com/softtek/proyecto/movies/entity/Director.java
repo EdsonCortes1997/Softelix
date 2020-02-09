@@ -1,40 +1,38 @@
 package com.softtek.proyecto.movies.entity;
 
-import javax.persistence.Column;
+import java.io.Serializable;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Director")
-public class Director {
-	
+@Table(name = "director")
+public class Director implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	@Id
-	@Column(name = "directorId")
-	private Long directorId;
-	
-	@Column(name = "directorName")
-	private String directorName;
-	
-	public Long getDirectorId() {
-		return directorId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer director_Id;
+
+	private String director_Name;
+
+	public Integer getDirectorId() {
+		return director_Id;
 	}
-	public void setDirectorId(Long directorId) {
-		this.directorId = directorId;
+
+	public void setDirectorId(Integer director_Id) {
+		this.director_Id = director_Id;
 	}
+
 	public String getDirectorName() {
-		return directorName;
+		return director_Name;
 	}
-	public void setDirectorName(String directorName) {
-		this.directorName = directorName;
+
+	public void setDirectorName(String director_Name) {
+		this.director_Name = director_Name;
 	}
-	
-	@Override
-	public String toString() {
-		return "Director [directorId=" + directorId + ", directorName=" + directorName + "]";
-	}
-	
-	
-	
 
 }

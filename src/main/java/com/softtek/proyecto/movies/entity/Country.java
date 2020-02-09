@@ -1,40 +1,40 @@
 package com.softtek.proyecto.movies.entity;
 
-import javax.persistence.Column;
+import java.io.Serializable;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Country")
-public class Country {
+@Table(name="country")
+public class Country implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
 	@Id
-	@Column(name = "countryId")
-	private Long countryId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer country_Id;
 	
-	@Column(name = "countryName")
-	private String countryName;
+	private String country_Name;
 
-	public Long getCountryId() {
-		return countryId;
+	public Integer getCountryId() {
+		return country_Id;
 	}
 
-	public void setCountryId(Long countryId) {
-		this.countryId = countryId;
+	public void setCountryId(Integer country_Id) {
+		this.country_Id = country_Id;
 	}
 
 	public String getCountryName() {
-		return countryName;
+		return country_Name;
 	}
 
-	public void setCountryName(String countryName) {
-		this.countryName = countryName;
+	public void setCountryName(String country_Name) {
+		this.country_Name = country_Name;
 	}
 
-	@Override
-	public String toString() {
-		return "Country [countryId=" + countryId + ", countryName=" + countryName + "]";
-	}
+	
 
 }

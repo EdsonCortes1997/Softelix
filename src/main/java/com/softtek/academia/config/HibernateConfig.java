@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories("com.softtek.academia.repository")
+@EnableJpaRepositories("com.softtek.proyecto.movies.repository")
 @PropertySource(value = {
     "classpath:application.properties"
 })
